@@ -77,80 +77,70 @@ if(mysql_query("INSERT INTO shopkeeper(ItemName, Price, ShopName,ContactNo, Shop
 </head>
 <body>
 
-	<nav class= "navbar navbar-default">
-
-	<div class="container">
-
-	<div class= "navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#MyData">
-		<span class="icon-bar"> </span>
-		<span class="icon-bar"> </span>
-		<span class="icon-bar"> </span>
-		</button>
-	<a class="navbar-brand" href="Search.php"> MARKET CHECKeR</a>
-	</div> <!-- header navbar END -->
-
-
-	<ul class="nav navbar-nav navbar-right">
-	      <li ><a class="btn btn-default" href="LogMeIn.php"><span class="glyphicon glyphicon-Log-out"></span> Logout</a></li>
-	</ul>
-
-
-	<div class="collapse navbar-collapse" id="MyData">
-	<ul class="nav navbar-nav ">
-	</ul>
-	</div>
-
-	</div> <!-- container END -->
-	</nav> <!-- Main nav END -->
+	<?php include_once('assets/helpers/navigation.php'); ?>
 
 	<div class="jumbotron ">
 	<div class="conatiner">
 
 	 <div class="row">
 
-		<div class="col-md-4 text-center">
-		<br>
-		<p>Share your ad </p>
-		<p>To the people, let them know </p>
-		<p>How you are helping them to save their money.</p>
-		</div>
+	 	<div class="col-lg-12">
+	 		<div class="col-lg-2"></div>
+	 		<div class="col-lg-8">
+	 			<h2>Upload your product!</h2>
+	 			<form method="post" action="logged_in.php" enctype="multipart/form-data" name="uploadProduct"> 
+					<div class="col-lg-12">
+				        <div class="col-lg-6 form-group">
+				          <input class="form-control" id="name" name="name" placeholder="Product Name" type="text" required>
+				        </div>
+						<div class="col-lg-6 form-group">
+							<input class="form-control" id="name" name="shopname" placeholder="Name of the shop" type="text" required>
+				        </div>
+				        <div class="col-lg-3 form-group">
+				        	<input class="form-control" id="name" name="price" placeholder="Price" type="text" required>
+				       
+				        </div>
+						<div class="col-lg-3 form-group">
+				        	<input class="form-control" id="name" name="cityname" placeholder="City" type="text" required>
+				        </div>
+				        <div class="col-lg-6">
+				        	<input class="form-control" id="number" name="contactno" placeholder="Contact #"  required>
+				        </div>
+				        <div class="col-lg-12">
+				        	<input class="form-control" type="text" id="comments" name="comments" placeholder="Address Line 1" required>
+				        </div>
+				        <div class="col-lg-6">
+				        	<div class="walk"></div>
+				        	<label for="file" class="input-label"><span id="label_span">Select files to upload</span></label><input id="file" type="file" multiple name="image[]" >
+				        </div>
+				        <div class="col-lg-6">
+				        	<div class="walk"></div>
+				        	<button class="btn btn-primary pull-right" name="upload-product">Submit</button>
+				        </div>
+				      </div>
+				      <br>
+					<div class="row">
+					
+					<div class="col-md-4">
+					
+					</div>
+					
+					<div class="col-md-2 form-group">
+				          
+				    </div>
+					</div> <!-- row -->
+	      </form>
+
+
+	 		</div>
+	 		<div class="col-lg-2"></div>
+
+	 	</div>
+
+		
 		
 	    <div class="col-md-8">
-		<form method="post" action="logged_in.php" enctype="multipart/form-data" name="uploadProduct"> 
-		<div class="row">
-	        <div class="col-sm-3 form-group">
-	          <input class="form-control" id="name" name="name" placeholder="Item name" type="text" required>
-	        </div>
-		<div class="col-sm-3 form-group">
-	          <input class="form-control" id="name" name="price" placeholder="Price" type="text" required>
-	        </div>
-	        <div class="col-sm-3 form-group">
-	          <input class="form-control" id="name" name="shopname" placeholder="Shop name" type="text" required>
-	        </div>
-		<div class="col-sm-3 form-group">
-	          <input class="form-control" id="name" name="cityname" placeholder="City name" type="text" required>
-	        </div>
-	      </div>
-	      <textarea class="form-control" id="comments" name="comments" placeholder="Shop address" rows="5" required></textarea>
-	      <br>
-		<div class="row">
-		<div class="col-md-6">
-		<div class="form-div">
-				<label for="file" class="input-label"><span id="label_span">Select files to upload</span></label><input id="file" type="file" multiple name="image[]" >
-			
-		</div>
-		</div>
-		
-		<div class="col-md-4">
-		<input class="form-control" id="number" name="contactno" placeholder="Contact no"  required>
-		</div>
-		
-		<div class="col-md-2 form-group">
-	          <button class="btn btn-primary pull-right" name="upload-product">Submit</button>
-	    </div>
-		</div> <!-- row -->
-	      </form>	
+		<	
 	</div>
 	</div>
 
