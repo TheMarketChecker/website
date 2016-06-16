@@ -46,7 +46,8 @@
 	    <div class="col-md-4 text-center">
 			<br> <br> 
 	      <p>need help??</p>
-	     <p>Contact us by filling the form and <br> then click send when you are done.</p>
+	     <p>Contact us by filling the form 
+		 and <br> then click send button when you are done.</p>
 	    </div>
 
 	    <div class="col-md-8">
