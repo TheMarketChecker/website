@@ -9,8 +9,8 @@ $count = 0;
 if(isset($_POST['search-pressed'])){
 	$product_name = test_input($_POST['product_name']);
 	$cityname = test_input($_POST['cityname']);
-	$result = mysqli_query($db_connect,"Select * from shopkeeper where ItemName like '$product_name' and CityName like '$cityname' ") or die("Fail" . mysql_error());
-	$count = mysqli_num_rows($result);
+	$result = mysql_query("Select * from shopkeeper where ItemName like '%$product_name%' and CityName like '%$cityname%' ") or die("Fail" . mysql_error());
+	$count = mysql_num_rows($result);
 }
 
 
@@ -77,7 +77,7 @@ if(isset($_POST['search-pressed'])){
 
 	$row = null;
 
-	while($row = mysqli_fetch_array($result)){
+	while($row = mysql_fetch_array($result)){
 
 	$checker = 5;
 
