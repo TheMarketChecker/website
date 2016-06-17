@@ -8,47 +8,42 @@
 
 <body>
 
-	<nav class= "navbar navbar-default">
-
-	<div class="container">
-
-	<div class= "navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#MyData">
-		<span class="icon-bar"> </span>
-		<span class="icon-bar"> </span>
-		<span class="icon-bar"> </span>
-		</button>
-	<a class="navbar-brand" href="Search.php"> MARKET CHECKeR</a>
-	</div> <!-- header navbar END -->
-
-
-
-
-	<div class="collapse navbar-collapse" id="MyData">
-	<ul class="nav navbar-nav ">
-	<li><a href="AboutUs.php">ABOUT US </a> </li>
-	<li><a href="ContactUs.php">CONTACT US </a> </li>
-	<li><a href="FeedBack.php">FEEDBACK </a> </li>
-	</ul>
-	</div>
-
-	</div> <!-- container END -->
-	</nav> <!-- Main nav END -->
+	<?php include_once('assets/helpers/navigation.php'); ?>
 
 	<div class="jumbotron">
 	<div class="container">
 
-	<form role="form">	
-	<h2 class="text-center" style="color:white;"> Change Password </h2>
-	<div class="form-group" id="frm">
-	<input type="text" class="form-control" size="23" style="margin-top:10px; margin-bottom:10px;" placeholder="Email" required>
-	<input type="password" class="form-control" size="50" style="margin-bottom:10px;" placeholder="new password" required>
-	<input type="password" class="form-control" size="50" style="margin-bottom:10px;" placeholder="Repeat-new password" required>
-	<a class="btn btn-primary btn-lg" style="float:right; margin-top:5px;" href="#" > Change </a>
+	<div class="col-lg-12">
+		<div class="col-lg-4"></div>
+		<div class="col-lg-4">
+			<div class="well">
+				<h3 style="color:#CCC">Change Password<h3>
+				<div class="input-group login-input">
+					<input type="password" class="form-control" size="50" placeholder="New Password" name="new-pass" required>
+						<span class="input-group-btn">
+							<div  class="btn input-sheild" > <i style="color:#777;" class="fa fa-check" aria-hidden="true"></i></div>
+					 	</span>
+				</div>
+				<div class="walk"></div>
+				<div class="input-group login-input">
+					<input type="password" class="form-control" size="50" placeholder="Re-enter Password" name="re-pass" required>
+						<span class="input-group-btn">
+							<div  class="btn input-sheild"> <i style="color:#04B404;" class="fa fa-check" aria-hidden="true"></i></div>
+					 	</span>
+				</div>
+				<div class="walk"></div>
+				<div class="input-group login-input">
+					<input type="password" class="form-control" size="50" placeholder="Current Password" name="curr-pass" required>
+						<span class="input-group-btn">
+							<div  class="btn input-sheild"> <i style="color:#777;" class="fa fa-lock" aria-hidden="true"></i></div>
+					 	</span>
+				</div>
+				<div class="walk"></div>
+				<button class="form-control btn btn-success" name="change-pass">Change Password</button><br /><br />
+			</div>
+		</div>
+		<div class="col-lg-3"></div>
 	</div>
-
-
-	</form>
 
 
 	</div> <!-- container -->

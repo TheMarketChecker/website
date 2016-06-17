@@ -8,33 +8,7 @@
 
 <body>
 
-	<nav class= "navbar navbar-default">
-
-	<div class="container">
-
-	<div class= "navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#MyData">
-		<span class="icon-bar"> </span>
-		<span class="icon-bar"> </span>
-		<span class="icon-bar"> </span>
-		</button>
-	<a class="navbar-brand" href="Search.php"> MARKET CHECKeR</a>
-	</div> <!-- header navbar END -->
-
-
-
-
-
-	<div class="collapse navbar-collapse" id="MyData">
-	<ul class="nav navbar-nav ">
-	<li><a href="AboutUs.php">ABOUT US </a> </li>
-	<li><a href="ContactUs.php">CONTACT US </a> </li>
-	<li><a href="FeedBack.php">FEEDBACK </a> </li>
-	</ul>
-	</div>
-
-	</div> <!-- container END -->
-	</nav> <!-- Main nav END -->
+	<?php include_once('assets/helpers/navigation.php'); ?>
 
 	<div class="jumbotron">
 	<div class="container">

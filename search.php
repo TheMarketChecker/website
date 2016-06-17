@@ -1,71 +1,64 @@
+<?php 
+
+// Database Connection
+include_once('assets/database/db_connect.php');
+include_once('assets/helpers/php_functions.php'); 
+
+
+$count = 0;
+if(isset($_POST['search-pressed'])){
+	$product_name = test_input($_POST['product_name']);
+	$cityname = test_input($_POST['cityname']);
+	$result = mysqli_query($db_connect,"Select * from shopkeeper where ItemName like '$product_name' and CityName like '$cityname' ") or die("Fail" . mysql_error());
+	$count = mysqli_num_rows($result);
+}
+
+
+
+?>
 <!DOCTYPE html>
 <html>
 
 <head>
+	<title>Search a product - MarketChecker</title>
 	<?php include_once('assets/helpers/head.php'); ?>
 </head>
 
 <body>
 
-	<nav class= "navbar navbar-default">
-
-	<div class="container">
-
-	<div class= "navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#MyData">
-		<span class="icon-bar"> </span>
-		<span class="icon-bar"> </span>
-		<span class="icon-bar"> </span>
-		</button>
-	<a class="navbar-brand" href="Search.php"> MARKET CHECKeR</a>
-	</div> <!-- header navbar END -->
-
-
-	<ul class="nav navbar-nav navbar-right">
-	      <li ><a class="btn btn-default" href="LogMeIn.php"><span class="glyphicon glyphicon-thumbs-up"></span> JOIN US</a></li>
-	</ul>
-
-
-	<div class="collapse navbar-collapse" id="MyData">
-	<ul class="nav navbar-nav ">
-	<li><a href="AboutUs.php">ABOUT US </a> </li>
-	<li><a href="ContactUs.php">CONTACT US </a> </li>
-	<li><a href="FeedBack.php">FEEDBACK </a> </li>
-	</ul>
-	</div>
-
-	</div> <!-- container END -->
-	</nav> <!-- Main nav END -->
+	<?php include_once('assets/helpers/navigation.php'); ?>
 
 	<div class="jumbotron text-center">
+		<div class="row">
+			<form class="form-inline" method="post" action="search.php" >
+				<?php if(!isset($_POST['search-pressed']) && !$count >= 1) { ?><div class="run"></div><?php } ?>
+				<div class="col-lg-12">
+					<div class="col-lg-2"></div>
+					<div class="col-lg-8">
+						<h3>Let's search for your product!</h3>
+						<br />
+						<input type="text" class="form-control" size="20" placeholder="City" name="cityname" required>
+						<div class="walk"></div>
+						<div class="input-group">
+							<input type="text" class="form-control" size="50" placeholder="What are you looking for?" name="product_name" required>
+							<span class="input-group-btn">
+								<button type="submit" class="btn btn-primary" name="search-pressed"> <span class="glyphicon glyphicon-search"></span></button>
+							</span>
+						</div>
+						<div class="walk"></div>
+						<?php if(isset($_POST['search-pressed']) && $count >= 1) { ?><hr class="style"><?php } ?>
+					</div>
+					<div class="col-lg-2"></div>
+				</div>
 
-	<div class="row">
-	<form class="form-inline" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" >
+			</form>
 
-	<div class="col-sm-5">
-
-	<h2> select a city:</h2>
-
-	<input type="text" class="form-control" size="20" placeholder="cityname" name="cityname" required>
-
-	</div>
-
-	<div class="col-sm-7">
-
-	<h2 style="margin-right:90px;"> save money!! do search </h2>
-	<input type="text" class="form-control" size="50" placeholder="Search any product you want" name="ring" required>
-	<button type="submit" class="btn btn-primary"> <span class="glyphicon glyphicon-search"></span> Search </button>
-
-	</div>
-
-	</form>
-
-	</div> <!-- row End -->
+		</div> <!-- row End -->
 	</div> <!-- jumbotron End -->
 
 
+	<?php if(isset($_POST['search-pressed'])) { if($count >= 1){?>	
 	<div class="container">
-
 	 <table class="table table-bordered table-hover">
 	    <thead style="background-color:white; color:#000000;">
 	      <tr>
@@ -82,23 +75,9 @@
 		
 	<?php
 
-	mysql_connect("localhost","root","");
-	mysql_select_db("fazal");
-
 	$row = null;
 
-
-
-
-
-
-
-	if($_SERVER["REQUEST_METHOD"] == "POST")
-	{$rock = test_input($_POST["ring"]);
-	 $cityname = test_input($_POST["cityname"]);
-	$result = mysql_query("Select * from shopkeeper where ItemName like '$rock' and CityName like '$cityname' ") or die("Fail" . mysql_error());
-
-	while($row = mysql_fetch_array($result)){
+	while($row = mysqli_fetch_array($result)){
 
 	$checker = 5;
 
@@ -143,20 +122,11 @@
 
 	}
 
-	} // if ends here
 
 
 
 
-	function test_input($data) {
-	  $data = trim($data);
-	  $data = stripslashes($data);
-	  $data = htmlspecialchars($data);
-	  return $data;
-	}
-
-
-
+	
 
 	?>
 	    </tbody>
@@ -164,6 +134,15 @@
 
 
 	</div> <!-- container -->
+	<?php }else{ ?>
+	<div class="col-lg-12">
+		<div class="col-lg-4"></div>
+		<div class="col-lg-4">
+			<div class="alert alert-danger text-center"><i class="fa fa-exclamation-circle" aria-hidden="true"></i>&nbsp;&nbsp;<b>Unfrotunately, your search didn't yeild any results</b></div>
+		</div>
+		<div class="col-lg-4"></div>
+	</div>
+	<?php }} ?>
 
 
 

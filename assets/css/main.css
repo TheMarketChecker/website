@@ -1,5 +1,10 @@
 /* Main Stylesheet */
 
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:400,500);
+@import url(https://fonts.googleapis.com/css?family=Merriweather);
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400,500,700);
+@import url(https://fonts.googleapis.com/css?family=Cedarville+Cursive);
+
 .navbar {
 	padding-top: 10px;
 	padding-bottom: 10px;
@@ -10,19 +15,42 @@
 	letter-spacing: 2px;
 }
 
+textarea{
+	resize:none;
+}
+
 .navbar-nav li a:hover {
 	color: #1abc9c !important;
 }
 
+.navbar-default .navbar-brand {
+	font-size: 15px;
+	color: #1abc9c;
+	font-weight: bold;
+}
+
+.navbar-default{
+	-webkit-box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.75);
+box-shadow: 0px 2px 7px 0px rgba(0,0,0,0.75);
+}
+
+.navbar-default .navbar-brand:hover{
+	color: #1abc9c;
+}
+
+
 body {
 	background-color: #1abc9d;
+
 }
 
 .jumbotron {
       background-color: #1abc9d;
-      color: #fff;
+      color: #444;
       padding: 100px 10px;
       margin-top:-20px;
+      font-family: 'Merriweather', serif;
 }
 
 .input-label:hover {
@@ -40,8 +68,8 @@ body {
 
 .input-label {
 	 background:#009688;
-	 color: #fff;
-	 padding:30px;
+	 color: #222;
+	 padding:10px;
 }
 
 #file {
@@ -66,6 +94,76 @@ p {
 }
 
 
+.walk{
+	height: 25px;
+}
+
+.run{
+	height: 50px;
+}
+
+hr.style{
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+}
+
+p.quote{
+	font-style: italic;
+	font-family: 'Cedarville Cursive', cursive;
+}
+
+
+.bg-world{
+	background:url(http://localhost/MarketChecker/assets/img/world-map-white.png) repeat-x;
+	height: auto;
+}
+
+
+/* Arrows */
+.arrow-left {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid black;
+}
+
+.input-sheild{
+	background-color:#fff;
+	cursor:default;
+	border-color:#CCC;
+	border-left:none;
+	border-top:1px solid #CCC;
+	outline-width: 0;
+}
+
+.login-input input:focus{
+	border-size:0;
+	border:none;
+	outline-width: 0;
+	outline:0;
+}
+
+.tiny{
+	font-size:12px;
+}
+.tiny a{
+	color: #CCC;
+	cursor: pointer;
+}
+
+.tiny a:hover{
+	text-decoration: none;
+}
+
+.btn-success{
+	background-color:#1abc9d;
+}
+
+.btn-success:hover{
+	background-color: #53c68c;
+}
 /* Change Password Form Style */
 
 #frm {

@@ -7,79 +7,51 @@
 
 <body>
 
-	<nav class= "navbar navbar-default">
+	<?php include_once('assets/helpers/navigation.php'); ?>
 
-	<div class="container">
-
-	<div class= "navbar-header">
-		<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#MyData">
-		<span class="icon-bar"> </span>
-		<span class="icon-bar"> </span>
-		<span class="icon-bar"> </span>
-		</button>
-	<a class="navbar-brand" href="Search.php"> MARKET CHECKeR</a>
-	</div> <!-- header navbar END -->
-
-
-	<ul class="nav navbar-nav navbar-right">
-	      <li ><a class="btn btn-default" href="LogMeIn.php"><span class="glyphicon glyphicon-thumbs-up"></span> JOIN US</a></li>
-	</ul>
-
-
-	<div class="collapse navbar-collapse" id="MyData">
-	<ul class="nav navbar-nav ">
-	<li><a href="AboutUs.php">ABOUT US </a> </li>
-	<li><a href="ContactUs.php" style="color: #1abc9c !important;">CONTACT US </a> </li>
-	<li><a href="FeedBack.php">FEEDBACK </a> </li>
-	</ul>
-	</div>
-
-	</div> <!-- container END -->
-	</nav> <!-- Main nav END -->
-
-	<div class="jumbotron ">
+	<div class="jumbotron bg-world">
 
 	<div class="conatiner">
 
 	<div class="row">
 
-	    <div class="col-md-4 text-center">
-			<br> <br> 
-	      <p>need help??</p>
-	     <p>Contact us by filling the form 
-		 and <br> then click send button when you are done.</p>
-	    </div>
+		<div class="col-lg-12">
 
-	    <div class="col-md-8">
-		<form method="post" enctype="multipart/form-data" > 
-		<div class="row">
-	        <div class="col-sm-4 form-group">
-	          <input class="form-control" id="email" name="email" placeholder="Email" type="email" >
-	        </div>
-		<div class="col-sm-4 form-group">
-	          <input class="form-control" id="name" name="name" placeholder="Name" type="text" >
-	        </div>
-			<div class="col-sm-4 form-group">
-			<input class="form-control" id="number" name="number" placeholder="Enter you contact number" >
-	       </div>
-		   </div>
-	      <textarea class="form-control" id="comments" name="comments" placeholder="Type your message here" rows="5"></textarea>
-	      <br>
-		<div class="row">
-		<div class="col-md-12 form-group">
-	          <button class="btn btn-primary pull-right" type="submit">Send</button>
-	        </div>
-		</div> <!-- row -->
-	      </form>	
-	</div>
+			<div class="col-lg-3"></div>
+			<div class="col-lg-6 text-center">
+				<h2 style="text-decoration:underline;">Send us a message!</h2>
+				<div class="run"></div>
+				<p style="font-family:'Merriweather',serfi;color:#444;">We will get back to you as soon as possible...</p>
+				<div class="run"></div>
+				<form method="post" enctype="multipart/form-data" > 
+					<div class="row">
+				        <div class="col-sm-4 form-group">
+				          	<input class="form-control" id="email" name="email" placeholder="Email" type="email" >
+				        </div>
+						<div class="col-sm-4 form-group">
+				        	<input class="form-control" id="name" name="name" placeholder="Name" type="text" >
+				   		</div>
+						<div class="col-sm-4 form-group">
+							<input class="form-control" id="number" name="tel" placeholder="Phone #" >
+				       </div>
+					   </div>
+				       <textarea class="form-control" id="comments" name="comments" placeholder="Type in your concern." rows="5"></textarea>
+				       <br />
+					   	  <div class="row">
+							<div class="col-md-12 form-group">
+				       			<button class="btn btn-primary pull-right" type="submit">Send</button>
+				    		</div>
+						  </div>
+	            </form>
+
+			</div>
+			<div class="col-lg-3"></div>
+		</div>
 	</div>
 
 
 	</div> <!-- container End -->
 	</div> <!-- jumbotron End -->
-
-
-
 </body>
 
 </html>
