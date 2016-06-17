@@ -30,11 +30,13 @@ if(isset($_FILES['image']['tmp_name'])) {
 		
 		if(!is_uploaded_file($_FILES['image']['tmp_name'][$i]))
 		{
+			if($i!=0)
 			echo "file didn't upload";
+		
 		}else {
-			if(@copy($_FILES['image']['tmp_name'][$i], "path/".$_FILES['image']['name'][$i])){
+			if(@copy($_FILES['image']['tmp_name'][$i], "assets/img/user_uploads/".$_FILES['image']['name'][$i])){
 				
-				$pathArray[$i] = "path/".$_FILES['image']['name'][$i];
+				$pathArray[$i] = "assets/img/user_uploads/".$_FILES['image']['name'][$i];
 
 				/*$path = "path/".$_FILES['image']['name'][$i];
 				"insert into shopkeeper($nameArray[$i]) values ('".$path ."')";
@@ -42,7 +44,7 @@ if(isset($_FILES['image']['tmp_name'])) {
 				if(mysql_query($sql) === true){
 					echo "successfully done";*/
 			}else{
-				echo "can't upload";
+				echo "can't upload #1";
 			}
 			}
 			
@@ -51,7 +53,7 @@ if(isset($_FILES['image']['tmp_name'])) {
 		
 	}else 
 			{
-				echo "can't upload";
+				echo "can't upload #2";
 			}
 	
 	
@@ -63,8 +65,9 @@ if(mysql_query("INSERT INTO shopkeeper(ItemName, Price, ShopName,ContactNo, Shop
 } else {  
 		echo "not successful :(";
 }
-}
 
+
+}
 
 
 ?>
