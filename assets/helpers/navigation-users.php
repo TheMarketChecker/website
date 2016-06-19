@@ -8,15 +8,15 @@
 	<span class="icon-bar"> </span>
 	<span class="icon-bar"> </span>
 	</button>
-<a class="navbar-brand text-uppercase" href="search.php">marketchecker</a>
+<a class="navbar-brand text-uppercase" href="../../search.php">marketchecker</a>
 </div> <!-- header navbar END -->
 
 
 
 <div class="collapse navbar-collapse navbar-right" id="MyData">
 <ul class="nav navbar-nav ">
-<li><a href="about.php">ABOUT US </a> </li>
-<li><a href="contact-us.php">CONTACT US </a> </li>
+<li><a href="../../about.php">ABOUT US </a> </li>
+<li><a href="../../contact-us.php">CONTACT US </a> </li>
 </ul>
 </div>
 

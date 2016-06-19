@@ -1,14 +1,24 @@
 <?php
+session_start();
+
+if(!isset($_SESSION['email'])){
+	header("Location:login");
+}
+$email = $_SESSION['email'];
 
 // Database Connection
 include_once('assets/database/db_connect.php');
+include_once('assets/helpers/php_functions.php');
 
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}
+$query = "SELECT * FROM `userinfo` WHERE `email` = '$email' LIMIT 1";
+$result = mysql_query($query);
+$count = mysql_num_rows($result);
+
+if($count == 1) $row = mysql_fetch_array($result);
+
+$username = $row['username'];
+$userID = $row['id'];
+
 
 if(isset($_POST['upload-product'])){
 
@@ -136,7 +146,21 @@ if(mysql_query("INSERT INTO shopkeeper(ItemName, Price, ShopName,ContactNo, Shop
 
 
 	 		</div>
-	 		<div class="col-lg-2"></div>
+	 		<div class="col-lg-2">
+	 			<div class="dropdown" style="margin-top:-50px;margin-left: 40px;">
+				  <button class="btn btn-danger dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+				    <?php echo $username; ?>
+				    <span class="caret"></span>
+				  </button>
+				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+				    <li><a href="users.php?name=<?php echo $username; ?>">Profile</a></li>
+				    <li><a href="contact_us">Help</a></li>
+				    <li role="separator" class="divider"></li>
+				    <li><a href="">Settings</a></li>
+				    <li><a href="logout"><span class="text-danger">Logout</span></a></li>
+				  </ul>
+				</div>
+	 		</div>
 
 	 	</div>
 

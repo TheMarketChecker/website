@@ -20,9 +20,9 @@
 				<h3 style="color:#CCC">Change Password<h3>
 				<div class="input-group login-input">
 					<input type="password" class="form-control" size="50" placeholder="New Password" name="new-pass" required>
-						<span class="input-group-btn">
-							<div  class="btn input-sheild" > <i style="color:#777;" class="fa fa-check" aria-hidden="true"></i></div>
-					 	</span>
+					<span class="input-group-btn">
+						<div  class="btn input-sheild" > <i style="color:#777;" class="fa fa-check" aria-hidden="true"></i></div>
+				 	</span>
 				</div>
 				<div class="walk"></div>
 				<div class="input-group login-input">
