@@ -3,5 +3,6 @@
 
   unset($_SESSION['email']);
   session_regenerate_id(true);
-  header("Location:login");
-?>
+  header("Location:login.php");
+
+  ?>

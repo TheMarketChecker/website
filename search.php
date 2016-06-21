@@ -30,6 +30,10 @@ if(isset($_POST['search-pressed'])){
 
 	<div class="jumbotron text-center">
 		<div class="row">
+		<div class="col-lg-10"> </div>
+			<div class="col-lg-2"> <a href="login.php" class="btn btn-primary btn-lg" ><span class="glyphicon glyphicon-thumbs-up"> </span> Join us </a> </div>
+		</div>
+		<div class="row">
 			<form class="form-inline" method="post" action="search.php" >
 				<?php if(!isset($_POST['search-pressed']) && !$count >= 1) { ?><div class="run"></div><?php } ?>
 				<div class="col-lg-12">
@@ -48,7 +52,7 @@ if(isset($_POST['search-pressed'])){
 						<div class="walk"></div>
 						<?php if(isset($_POST['search-pressed']) && $count >= 1) { ?><hr class="style"><?php } ?>
 					</div>
-					<div class="col-lg-2"></div>
+					<div class="col-lg-2"> </div>
 				</div>
 
 			</form>

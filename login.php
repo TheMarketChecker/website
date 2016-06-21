@@ -3,7 +3,7 @@ include_once("assets/helpers/php_functions.php");
 include_once("assets/database/db_connect.php");
 session_start();
 if(isset($_SESSION['email'])){	
-	header("Location:logged_in");
+	header("Location:logged_in.php");
 }
 if(isset($_POST['login-submit'])){
 	$email = test_input($_POST['email']);
@@ -15,11 +15,11 @@ if(isset($_POST['login-submit'])){
 	if($count == 1){
 		$_SESSION['email'] = $email;
 		session_write_close();
-    	header('Refresh: 1; logged_in');
+    	header('Refresh: 1; logged_in.php');
 		$successMessage = "You've successfully logged in";
 	}
 	else{
-		$errorMessage = "The username or password is incorrect";
+		$errorMessage = "The email or password is incorrect";
 	}
 }
 
@@ -66,7 +66,7 @@ if(isset($_POST['login-submit'])){
 					<div class="walk"></div>
 					<button class="form-control btn btn-success" type="submit" name="login-submit">Login</button><br /><br />
 				</form>
-				<span class="tiny"><a>Forgot password?</a></span>
+				<a href="forgot_pass.php"><span class="tiny">Forgot password?</span></a>
 			</div>
 			<div class="col-lg-12">
 				<div class="col-lg-3"></div>
@@ -76,7 +76,7 @@ if(isset($_POST['login-submit'])){
 				<div class="col-lg-2"></div>
 			</div>
 		</div>
-		<div class="col-lg-3"></div>
+		<div class="col-lg-4"></div>
 	</div>
 
 

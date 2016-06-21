@@ -2,8 +2,9 @@
 session_start();
 
 if(!isset($_SESSION['email'])){
-	header("Location:login");
+	header("Location:login.php");
 }
+
 $email = $_SESSION['email'];
 
 // Database Connection
@@ -153,11 +154,11 @@ if(mysql_query("INSERT INTO shopkeeper(ItemName, Price, ShopName,ContactNo, Shop
 				    <span class="caret"></span>
 				  </button>
 				  <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-				    <li><a href="users.php?name=<?php echo $username; ?>">Profile</a></li>
-				    <li><a href="contact_us">Help</a></li>
+				    <li><a href="users.php" name=<?php echo $username; ?> >Profile</a></li>
+				    <li><a href="">Help</a></li>
 				    <li role="separator" class="divider"></li>
 				    <li><a href="">Settings</a></li>
-				    <li><a href="logout"><span class="text-danger">Logout</span></a></li>
+				    <li><a href="logout.php"><span class="text-danger">Logout</span></a></li>
 				  </ul>
 				</div>
 	 		</div>
@@ -167,7 +168,7 @@ if(mysql_query("INSERT INTO shopkeeper(ItemName, Price, ShopName,ContactNo, Shop
 		
 		
 	    <div class="col-md-8">
-		<	
+	
 	</div>
 	</div>
 
