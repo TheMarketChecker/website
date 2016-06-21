@@ -66,7 +66,7 @@ if(isset($_POST['login-submit'])){
 					<div class="walk"></div>
 					<button class="form-control btn btn-success" type="submit" name="login-submit">Login</button><br /><br />
 				</form>
-				<a href="forgot_pass.php"><span class="tiny">Forgot password?</span></a>
+				<a href="change_password.php"><span class="tiny">Forgot password?</span></a>
 			</div>
 			<div class="col-lg-12">
 				<div class="col-lg-3"></div>

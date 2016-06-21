@@ -54,7 +54,7 @@ $address = $row['address'];
 
 	</head>
 	<body>
-		<?php include_once('assets/helpers/navigation-users.php'); ?>
+		<br><br><br>
 		<div class="container">
 			<div class="run"></div>
 		    <h3 style="text-align:center;">Update Profile</h3>

@@ -6,6 +6,7 @@ include_once('assets/helpers/php_functions.php');
 
 
 $count = 0;
+
 if(isset($_POST['search-pressed'])){
 	$product_name = test_input($_POST['product_name']);
 	$cityname = test_input($_POST['cityname']);
