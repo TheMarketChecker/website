@@ -6,6 +6,7 @@ include_once('assets/helpers/php_functions.php');
 
 
 $count = 0;
+
 if(isset($_POST['search-pressed'])){
 	$product_name = test_input($_POST['product_name']);
 	$cityname = test_input($_POST['cityname']);
@@ -30,6 +31,10 @@ if(isset($_POST['search-pressed'])){
 
 	<div class="jumbotron text-center">
 		<div class="row">
+		<div class="col-lg-10"> </div>
+			<div class="col-lg-2"> <a href="login.php" class="btn btn-primary btn-lg" ><span class="glyphicon glyphicon-thumbs-up"> </span> Join us </a> </div>
+		</div>
+		<div class="row">
 			<form class="form-inline" method="post" action="search.php" >
 				<?php if(!isset($_POST['search-pressed']) && !$count >= 1) { ?><div class="run"></div><?php } ?>
 				<div class="col-lg-12">
@@ -48,7 +53,7 @@ if(isset($_POST['search-pressed'])){
 						<div class="walk"></div>
 						<?php if(isset($_POST['search-pressed']) && $count >= 1) { ?><hr class="style"><?php } ?>
 					</div>
-					<div class="col-lg-2"></div>
+					<div class="col-lg-2"> </div>
 				</div>
 
 			</form>
@@ -59,18 +64,15 @@ if(isset($_POST['search-pressed'])){
 
 	<?php if(isset($_POST['search-pressed'])) { if($count >= 1){?>	
 	<div class="container">
-	 <table class="table table-bordered table-hover">
-	    <thead style="background-color:white; color:#000000;">
-	      <tr>
-		  <th> Photos </th>
-		  <th>City Name </th>
-	        <th>Shop Name</th>
-	        <th>Item Name</th>
-			<th> Contact No </th>
-		<th>Price</th>
-	        <th>Shop Address</th>
-	      </tr>
-	    </thead>
+	 <table class="table table-hover">
+	 	<thead style="background-color: #FFF;">
+	 	<tr>
+	 		<th>Image</th>
+	 		<th>Description</th>
+	 		<th>Phone</th>
+	 		<th>Price</th>
+	 	</tr>
+	 	</thead>
 	    <tbody>
 		
 	<?php
@@ -102,21 +104,27 @@ if(isset($_POST['search-pressed'])){
 		
 		
 	}
+
+	$originalImage = 'assets/img/user_uploads/' . $imgArray[0];
+	$alertnameImage = 'assets/img/user_uploads/image-not-found.jpg';
 		
-	echo "<tr class='success'>";
+	echo "<tr class='success'><td>";
 		if($checker == 0){
-			echo "<td> no images </td>";
-		}else if($checker == 1){
-			echo "<td> <a href='allImages.php'> $checker image is Avilable  </a></td>";
-		}else {
-				echo "<td> <a href='allImages.php'> $checker images are Avilable  </a></td>";
+			echo "<img src='" . $alertnameImage . "' width='250' height='200'>";
+		}else if($checker >= 1){
+			if(file_exists($originalImage)) echo '<img src="' . $originalImage . '" width="250" height="200">';
+			else echo '<img src="' . $alertnameImage . '" width="250" height="200">';
 		}
-	echo "<td> $cityname </td>
-		<td> $ShopName </td>
-		<td> $ItemName </td>
+	echo "</td>";
+	echo "<td> 
+			<b>$ItemName</b>
+			<br />
+			<u>$ShopName</u>
+			<br />
+			$ShopAddress
+		</td>
 		<td> $contactNo </td>
-		<td> $Price </td>
-		<td> $ShopAddress </td>
+		<td> $Price PKR </td>
 	      </tr>";
 
 

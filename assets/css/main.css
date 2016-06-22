@@ -115,7 +115,7 @@ p.quote{
 
 
 .bg-world{
-	background:url(http://localhost/MarketChecker/assets/img/world-map-white.png) repeat-x;
+	background:url(../img/world-map-white.png) repeat-x;
 	height: auto;
 }
 
