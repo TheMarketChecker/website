@@ -26,6 +26,7 @@ if(isset($_POST['upload-product'])){
 	$comment = test_input($_POST["comments"]);
 	$Itemname = test_input($_POST["name"]);
 	$price = test_input($_POST["price"]);
+	$price = price($price);
 	$shopname = test_input($_POST["shopname"]);
 	$cityname = test_input($_POST["cityname"]);
 	$contactNo = test_input($_POST["contactno"]);

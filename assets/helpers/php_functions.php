@@ -11,4 +11,10 @@ function test_input($data) {
 }
 
 
+function price($data){
+	if(preg_match("/^[0-9,]+$/", $data)){
+		$data = str_replace(",", "", $data);
+	}
+}
+
 ?>

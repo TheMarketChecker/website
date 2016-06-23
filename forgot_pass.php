@@ -3,6 +3,8 @@ include_once("assets/helpers/php_functions.php");
 include_once("assets/database/db_connect.php");
 
 $strPassCheck = "";
+
+$get_username = "";
 	
 session_start();
 
@@ -22,9 +24,49 @@ if(isset($_POST['change-pass'])){
 	}
 
 	if($password1 == $password2){
+
+		$passLen = strlen($password1);
+		
+		$passLast = $password1[$passLen-1];
+		
+		$censoredPass = $password1[0];
+		for($i = 1; $i < $passLen - 1; $i++){
+			$censoredPass .= '*';
+		}
+		$censoredPass .= $password1[strlen($password1)-1];
+		
+
+
+		$get_query = "SELECT `username` FROM `userinfo` WHERE `email` = '$email' LIMIT 1";
+		$result = mysql_query($get_query);
+		$count = mysql_num_fields($result);
+		if($count == 1){
+			$get_username = mysqli_fetch_array($result)['username'];
+		}
+
 	$query = "UPDATE userinfo set password = md5('$password1') where email like '$email' ";
 	mysql_query($query);
-	header('Refresh: 1; ,login.php');}
+	/* Sending Mail to User */
+		$to = $email; 
+		$subject = 'MarketChecker - Password Update';
+		$message = '
+			Hello $get_username,
+
+			You\'ve recently changed your account credentials:
+
+			---------
+			Password: $censoredPass
+			---------
+
+			Thank you!
+
+		';
+		$headers = 'From:noreply@marketchecker.tk';
+		mail($to, $subject,$message,$headers);
+
+	/* End Sending Mail to User */
+	header('Refresh: 1; ,login.php');
+}
 	
 	
 			
