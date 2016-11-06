@@ -1,6 +1,8 @@
 # TheMarketChecker
 **WEB URL COMING SOON**
 
+--- NO FURTHER ADDITIONS TO THIS PROJECT ---
+
 A digital classified platform for searching competitive goods at a low cost. TheMarketChecker searches all the products being sold across the city and displays the ones that are lowest in price of all.
 
 ### Team
